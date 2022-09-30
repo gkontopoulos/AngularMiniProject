@@ -1,0 +1,49 @@
+<h2>Bug Reporting System</h2>
+<button (click)="makeRequest()" class="btn btn-primary">Get the Bugs List</button>
+<div *ngIf="loading">loading...</div>
+
+<pre>{{ response | json}} </pre>
+
+<div *ngIf="message" class="alert alert-danger">
+  {{ message | json }}
+</div>
+
+<!-- <table>
+  <tr>
+     <td>{{response[0].title}}</td>
+     <td>{{response[0].priority}}</td>
+     <td>{{response[0].reporter}}</td>
+     <td>{{response[0].dateCreated}}</td>
+     <td>{{response[0].status}}</td>
+  </tr>
+  </table> -->
+
+  <div>
+    <h1>Bug reporting System</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Priority</th>
+                <th>Reporter</th>
+                <th>Date Created</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{response[0].title}}</td>
+            <td>{{response[0].priority}}</td>
+            <td>{{response[0].reporter}}</td>
+            <td>{{response[0].dateCreated}}</td>
+            <td>{{response[0].status}}</td>
+         </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- <div *ngIf="message" class="alert alert-success">
+  {{ response.date }} <br>
+  {{ response.title }}
+  <img [src]="response.url" alt="bug reporting system" width="200px" height="200px">
+</div> -->
